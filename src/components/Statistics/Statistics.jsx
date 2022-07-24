@@ -1,44 +1,44 @@
  
 import { StatisticCard, StatisticTitle, StatisticList, StatisticListItem, StatisticListOnfo} from "./Statistics.styled"
  
-import stat from "../../data.json"
+import data from "../../data.json"
+
+ 
  
 const StatList = ({ stats }) => {
     return (
-      <ul>
+      <StatisticList>
         {stats.map(stat => (
-          <li key={stat.id}>{stat.label} {stat.percentage}</li>
+          <StatisticListItem key={stat.id} id={stat.id} theme={{ main: stat.color }}>
+            <StatisticListOnfo>{stat.label} </StatisticListOnfo>
+            <StatisticListOnfo>{stat.percentage}% </StatisticListOnfo>
+          </StatisticListItem>
         ))}
-      </ul>
+      </StatisticList>
     );
   };
   
+ 
+  function StatTitle({title }) {
+    return (
+        <StatisticTitle>{title}</StatisticTitle>
+
+         )
+    
+}
+
+ 
+ 
   
 
 
 export const Statistic = () => {
     return (
         <StatisticCard>
-            <StatisticTitle>Upload stats</StatisticTitle>
-
-            <StatList stats={stat} />
-            <StatisticList>
-                <StatisticListItem>
-                      <StatisticListOnfo></StatisticListOnfo>
-                      <StatisticListOnfo></StatisticListOnfo>
-                </StatisticListItem>
-
-                <StatisticListItem>
-                       <StatisticListOnfo></StatisticListOnfo>
-                       <StatisticListOnfo></StatisticListOnfo>
-                </StatisticListItem>
-
-                <StatisticListItem>
-                       <StatisticListOnfo></StatisticListOnfo>
-                       <StatisticListOnfo></StatisticListOnfo>
-                </StatisticListItem>
-
-            </StatisticList>
+            {/* <StatisticTitle title="Upload stats">Upload stats</StatisticTitle> */}
+            <StatTitle title="Upload stats"/> 
+            <StatList stats={data} />
+             
         </StatisticCard>
     ) 
 }
