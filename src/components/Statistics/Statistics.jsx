@@ -1,6 +1,6 @@
  
 import { StatisticCard, StatisticTitle, StatisticList, StatisticListItem, StatisticListOnfo} from "./Statistics.styled"
- 
+import PropTypes from "prop-types" 
 import data from "../../data.json"
 
  
@@ -32,4 +32,12 @@ export const Statistic = () => {
             <StatList stats={data} />
         </StatisticCard>
     ) 
+}
+
+Event.propTypes = {
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+   
+        
 }

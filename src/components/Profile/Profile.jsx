@@ -10,7 +10,7 @@ import {
         ProfileStats
          } from "./Profile.styled";
 import user from "../../user.json"
- 
+import PropTypes from "prop-types"
   
    
           
@@ -44,4 +44,15 @@ export const Profile = () => {
         </ProfileCard>
         
     )
+}
+
+Event.propTypes = {
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired, 
+          
 }
