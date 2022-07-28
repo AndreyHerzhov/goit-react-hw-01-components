@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
+export const UserCardsList = styled.ul`
+`
 
-export const UserCard = styled.div`
+
+export const UserCardItem = styled.li`
 display: flex;
 align-items: center;
 justify-content: space-around;

@@ -1,43 +1,32 @@
- 
-import { StatisticCard, StatisticTitle, StatisticList, StatisticListItem, StatisticListOnfo} from "./Statistics.styled"
+import { StatisticCard, 
+         StatisticTitle,
+         StatisticList,
+         StatisticListItem, 
+         StatisticListOnfo} from "./Statistics.styled"
 import PropTypes from "prop-types" 
-import data from "../../data.json"
+ 
 
  
  
-const StatList = ({ stats }) => {
+export const Statistics = ({ stats, title }) => {
     return (
+      <StatisticCard>
+      <StatisticTitle>{title}</StatisticTitle>
       <StatisticList>
-        {stats.map(stat => (
-          <StatisticListItem key={stat.id} id={stat.id} theme={{ main: stat.color }}>
-            <StatisticListOnfo>{stat.label} </StatisticListOnfo>
-            <StatisticListOnfo>{stat.percentage}% </StatisticListOnfo>
+        {stats.map(({id, color, label, percentage}) => (
+          <StatisticListItem key={id} id={id} theme={{ main: color }}>
+            <StatisticListOnfo>{label} </StatisticListOnfo>
+            <StatisticListOnfo>{percentage}% </StatisticListOnfo>
           </StatisticListItem>
         ))}
       </StatisticList>
+      </StatisticCard>
     );
   };
   
  
-  function StatTitle({title }) {
-    return (
-        <StatisticTitle>{title}</StatisticTitle>
-  )
-}
 
-export const Statistic = () => {
-    return (
-        <StatisticCard>
-            <StatTitle title="Upload stats"/> 
-            <StatList stats={data} />
-        </StatisticCard>
-    ) 
-}
-
-Event.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+Statistics.propTypes = {
+  stats: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
-   
-        
 }

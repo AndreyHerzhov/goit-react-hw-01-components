@@ -9,35 +9,33 @@ import {
         ProfileListItem,
         ProfileStats
          } from "./Profile.styled";
-import user from "../../user.json"
 import PropTypes from "prop-types"
-  
-   
+ 
           
-  
+ 
 
-export const Profile = () => {
+export const Profile = ({avatar, username, tag, location, stats}) => {
     return (
         <ProfileCard>
             <ProfileDescription>
-                <ProfileAvatar src={user.avatar} alt={user.username}></ProfileAvatar>
-                <ProfileUsername>{user.username}</ProfileUsername>
-                <ProfileTag>{user.tag}</ProfileTag>
-                <ProfileLocation>{user.location}</ProfileLocation>
+                <ProfileAvatar src={avatar} alt={username}></ProfileAvatar>
+                <ProfileUsername>{username}</ProfileUsername>
+                <ProfileTag>{tag}</ProfileTag>
+                <ProfileLocation>{location}</ProfileLocation>
             </ProfileDescription>
 
             <ProfileList>
                 <ProfileListItem>
                     <ProfileStats>Followers</ProfileStats>
-                    <ProfileStats>{user.stats.followers}</ProfileStats>
+                    <ProfileStats>{stats.followers}</ProfileStats>
                 </ProfileListItem>
                 <ProfileListItem>
                     <ProfileStats>Views</ProfileStats>
-                    <ProfileStats>{user.stats.views}</ProfileStats>
+                    <ProfileStats>{stats.views}</ProfileStats>
                 </ProfileListItem>
                 <ProfileListItem>
                     <ProfileStats>Likes</ProfileStats>
-                    <ProfileStats>{user.stats.likes}</ProfileStats>
+                    <ProfileStats>{stats.likes}</ProfileStats>
                 </ProfileListItem>
             </ProfileList>
 
@@ -46,13 +44,11 @@ export const Profile = () => {
     )
 }
 
-Event.propTypes = {
+Profile.propTypes = {
     avatar: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired, 
-          
+    stats: PropTypes.object.isRequired,
+     
 }

@@ -1,32 +1,27 @@
-import friends from "../../friends.json"
-import { UserCard, UserStatus, UserAvatar,UserName } from "./FriendList.styled"
+import { UserCardsList,
+         UserCardItem, 
+         UserStatus, 
+         UserAvatar,
+         UserName } from "./FriendList.styled"
 import PropTypes from "prop-types"
 
-const UserWrapper = ({ data }) => {
+export const FriendList = ({friends}) => {
     return (
-      
-        data.map(stat => (
-            <UserCard key={stat.id}>
-                <UserStatus isOnline={stat.isOnline}></UserStatus>
-                <UserAvatar src={stat.avatar} alt={stat.username}></UserAvatar>
-                <UserName>{stat.name}</UserName>
-            </UserCard>
-        ))
-      
+      <UserCardsList>
+        {friends.map(({id, isOnline, avatar, username, name}) => (
+            <UserCardItem key={id}>
+                <UserStatus isOnline={isOnline}></UserStatus>
+                <UserAvatar src={avatar} alt={username}></UserAvatar>
+                <UserName>{name}</UserName>
+            </UserCardItem>
+        ))}
+        </UserCardsList>
     );
   };
  
+ 
 
-export const FriendList = () => {
-    return (
-        <UserWrapper data={friends}/>
-    )
-}
-
-Event.propTypes = {
-    isOnline: PropTypes.bool.isRequired,
-    name: PropTypes.number.isRequired,
-    avatar: PropTypes.string.isRequired,
-     
+  FriendList.propTypes = {
+    friends: PropTypes.array.isRequired,
           
 }
