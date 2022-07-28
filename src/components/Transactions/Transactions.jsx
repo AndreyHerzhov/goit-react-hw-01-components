@@ -5,8 +5,6 @@ import { TransactionsTable,
         TransactionsBody,
         TransactionBodyRow,
         TransactionsBodyCol } from "./Transactions.styled";
-
- 
 import PropTypes from "prop-types"
  
  

@@ -14,7 +14,11 @@ import PropTypes from "prop-types"
           
  
 
-export const Profile = ({avatar, username, tag, location, stats}) => {
+export const Profile = ({avatar, 
+                         username, 
+                         tag, 
+                         location,
+                          stats:{followers,views,likes }}) => {
     return (
         <ProfileCard>
             <ProfileDescription>
@@ -27,15 +31,15 @@ export const Profile = ({avatar, username, tag, location, stats}) => {
             <ProfileList>
                 <ProfileListItem>
                     <ProfileStats>Followers</ProfileStats>
-                    <ProfileStats>{stats.followers}</ProfileStats>
+                    <ProfileStats>{followers}</ProfileStats>
                 </ProfileListItem>
                 <ProfileListItem>
                     <ProfileStats>Views</ProfileStats>
-                    <ProfileStats>{stats.views}</ProfileStats>
+                    <ProfileStats>{views}</ProfileStats>
                 </ProfileListItem>
                 <ProfileListItem>
                     <ProfileStats>Likes</ProfileStats>
-                    <ProfileStats>{stats.likes}</ProfileStats>
+                    <ProfileStats>{likes}</ProfileStats>
                 </ProfileListItem>
             </ProfileList>
 
