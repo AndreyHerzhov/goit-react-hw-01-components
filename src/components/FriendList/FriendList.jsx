@@ -45,9 +45,9 @@ export default FriendList
   FriendList.propTypes = {
      
     id: PropTypes.string,
-    isOnline: PropTypes.bool,
-    avatar: PropTypes.string,
-    username: PropTypes.string,
-    name: PropTypes.string,
+    isOnline: PropTypes.bool.isRequired,
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
           
 }
