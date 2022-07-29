@@ -1,27 +1,53 @@
-import { UserCardsList,
-         UserCardItem, 
-         UserStatus, 
-         UserAvatar,
-         UserName } from "./FriendList.styled"
+import { FriendListCard,
+         FriendListItem, 
+         FriendStatus, 
+         FriendAvatar,
+         FriendName } from "./FriendList.styled"
 import PropTypes from "prop-types"
+import React, { Component } from "react";
 
-export const FriendList = ({friends}) => {
+
+class FriendList extends Component {
+  render() {
+    const { friends } = this.props
     return (
-      <UserCardsList>
+      <FriendListCard>
         {friends.map(({id, isOnline, avatar, username, name}) => (
-            <UserCardItem key={id}>
-                <UserStatus isOnline={isOnline}></UserStatus>
-                <UserAvatar src={avatar} alt={username}></UserAvatar>
-                <UserName>{name}</UserName>
-            </UserCardItem>
+            <FriendListItem key={id}>
+                <FriendStatus isOnline={isOnline}></FriendStatus>
+                <FriendAvatar src={avatar} alt={username}></FriendAvatar>
+                <FriendName>{name}</FriendName>
+            </FriendListItem>
         ))}
-        </UserCardsList>
-    );
-  };
+        </FriendListCard>
+    )
+  }
+}
+
+export default FriendList
+
+// export const FriendList = ({friends}) => {
+//     return (
+//       <FriendListCard>
+//         {friends.map(({id, isOnline, avatar, username, name}) => (
+//             <FriendListItem key={id}>
+//                 <UserStatus isOnline={isOnline}></UserStatus>
+//                 <UserAvatar src={avatar} alt={username}></UserAvatar>
+//                 <UserName>{name}</UserName>
+//             </FriendListItem>
+//         ))}
+//         </FriendListCard>
+//     );
+//   };
  
  
 
   FriendList.propTypes = {
-    friends: PropTypes.array.isRequired,
+     
+    id: PropTypes.string,
+    isOnline: PropTypes.bool,
+    avatar: PropTypes.string,
+    username: PropTypes.string,
+    name: PropTypes.string,
           
 }

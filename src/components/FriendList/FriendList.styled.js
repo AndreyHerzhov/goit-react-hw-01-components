@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const UserCardsList = styled.ul`
+export const FriendListCard = styled.ul`
 `
 
 
-export const UserCardItem = styled.li`
+export const FriendListItem = styled.li`
 display: flex;
 align-items: center;
 justify-content: space-around;
@@ -16,20 +16,20 @@ width: 320px;
 height: 100px;
 `
 
-export const UserStatus = styled.button`
+export const FriendStatus = styled.button`
     border-radius: 50%;
     width: 20px;
     height: 20px;
     background-color: ${p => p.isOnline ? 'green' : 'red'};
 `
 
-export const UserAvatar = styled.img`
+export const FriendAvatar = styled.img`
     border-radius: 20%;
     width: 50px;
     height: 50px;
     background-color: brown;
 `
 
-export const UserName = styled.p`
+export const FriendName = styled.p`
    font-size: 16px;
 `

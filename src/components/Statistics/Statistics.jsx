@@ -11,7 +11,8 @@ import PropTypes from "prop-types"
 export const Statistics = ({ stats, title }) => {
     return (
       <StatisticCard>
-      <StatisticTitle>{title}</StatisticTitle>
+        {title && <StatisticTitle>{title}</StatisticTitle>}
+      
       <StatisticList>
         {stats.map(({id, color, label, percentage}) => (
           <StatisticListItem key={id} id={id} theme={{ main: color }}>
@@ -27,6 +28,10 @@ export const Statistics = ({ stats, title }) => {
  
 
   Statistics.propTypes = {
-      stats: PropTypes.array.isRequired,
-      title: PropTypes.string.isRequired,
+    
+    id: PropTypes.string,
+    color: PropTypes.string,
+    label: PropTypes.string,
+    percentage: PropTypes.number,
+    title: PropTypes.string,
 }

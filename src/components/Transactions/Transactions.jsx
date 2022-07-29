@@ -40,5 +40,9 @@ export const TransactionHistory  = ({ items }) => {
 
  
 TransactionHistory.propTypes = {
-    items: PropTypes.array.isRequired,
+    
+    id: PropTypes.string,
+    type: PropTypes.string,
+    amount: PropTypes.number,
+    currency: PropTypes.string,
 }

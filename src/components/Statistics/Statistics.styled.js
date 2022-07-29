@@ -6,7 +6,7 @@ export const StatisticCard = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 320px;
-    height: 160px;
+    /* height: 160px; */
     background-color: white;
     margin: 0 auto;
     margin-top: 40px;
@@ -19,7 +19,7 @@ export const StatisticTitle = styled.h2`
     justify-content: center;
     color: grey;
     font-size: 24px;
-    height: 50%;
+    height: 80px;
      
 `
 
