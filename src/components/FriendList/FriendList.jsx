@@ -41,13 +41,16 @@ export default FriendList
 //   };
  
  
+FriendList.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ),
+};
 
-  FriendList.propTypes = {
-     
-    id: PropTypes.string,
-    isOnline: PropTypes.bool.isRequired,
-    avatar: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-          
-}
+ 
