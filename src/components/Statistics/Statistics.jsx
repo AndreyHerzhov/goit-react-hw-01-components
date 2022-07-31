@@ -37,7 +37,7 @@ export const Statistics = ({ stats, title }) => {
         
       })
     ),
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
   };
 
  
